@@ -36,5 +36,3 @@ def tosql(filename):
 
 while True:
     checking_queue()
-#tosql("2022-09-1911:41:33.994920")
-#tosql(sys.argv[1])

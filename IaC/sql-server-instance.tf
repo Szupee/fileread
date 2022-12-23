@@ -1,15 +1,15 @@
 resource "azurerm_sql_server" "webappsql" {
-  name                         = "filereadsql012"
+  name                         = data.azurerm_key_vault_secret.sqlserver.value
   resource_group_name          = azurerm_resource_group.tfr-rg1.name
   location                     = azurerm_resource_group.tfr-rg1.location
   version                      = "12.0"
-  administrator_login          = "mradministrator"
-  administrator_login_password = "thisIsDog11"
+  administrator_login          = data.azurerm_key_vault_secret.dblogin.value
+  administrator_login_password = data.azurerm_key_vault_secret.dbpw.value
 
 }
 
 resource "azurerm_sql_database" "webapponstance1" {
-  name                = "webapponstance1"
+  name                = data.azurerm_key_vault_secret.dbname.value
   resource_group_name = azurerm_resource_group.tfr-rg1.name
   location            = azurerm_resource_group.tfr-rg1.location
   server_name         = azurerm_sql_server.webappsql.name

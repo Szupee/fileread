@@ -1,3 +1,4 @@
+/*
 resource "azurerm_storage_account" "tstorageacc1" {
   name                     = "filereadstorage"
   resource_group_name      = azurerm_resource_group.tfr-rg1.name
@@ -6,3 +7,4 @@ resource "azurerm_storage_account" "tstorageacc1" {
   account_replication_type = "LRS"
 }
 
+*/

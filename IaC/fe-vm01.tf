@@ -25,7 +25,7 @@ resource "azurerm_linux_virtual_machine" "tfe-vm01" {
   location            = azurerm_resource_group.tfr-rg1.location
   size                = "Standard_B1s"
   admin_username      = "adminuser"
-  admin_password      = "Password123!"
+  admin_password      = data.azurerm_key_vault_secret.testpw.value
   availability_set_id = azurerm_availability_set.webas.id
   network_interface_ids = [
     azurerm_network_interface.fe-vm01-nic.id,

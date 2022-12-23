@@ -8,5 +8,5 @@ sudo pip3 install flask_wtf
 sudo pip3 install wtforms 
 sudo pip3 install azure-storage-blob 
 sudo pip3 install azure-storage-queue
-cd fileread
+cd fileread/python
 sudo python3 webapp1.py

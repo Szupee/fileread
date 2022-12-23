@@ -24,6 +24,11 @@ data "azurerm_key_vault_secret" "testpw" {
   key_vault_id = data.azurerm_key_vault.mainvault.id
 }
 
+data "azurerm_key_vault_secret" "sqlserver" {
+  name         = "sqlservername"
+  key_vault_id = data.azurerm_key_vault.mainvault.id
+}
+
 /*
 output "secret_value" {
   value     = data.azurerm_key_vault_secret.testpw.value

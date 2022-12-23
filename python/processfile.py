@@ -5,6 +5,8 @@ import sys
 import ini
 from azure.storage.queue import QueueServiceClient, QueueClient, BinaryBase64EncodePolicy, BinaryBase64DecodePolicy
 
+
+
 def checking_queue():
     queue = QueueClient.from_connection_string(conn_str="DefaultEndpointsProtocol=https;AccountName=uploadfilesfrom1;AccountKey=1e7X5xrSXCf5FkBFB8yVG4XA+PFtnmzk0YkXXRN8jrcbri4WsE8G6kxI5l7FAo7G6D2wk+sBde9/+AStNFEScA==;EndpointSuffix=core.windows.net", queue_name="uploadfiles")
     response = queue.receive_messages()

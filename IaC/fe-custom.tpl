@@ -3,6 +3,8 @@ git clone https://github.com/Szupee/fileread.git
 sudo apt-get update -y &&
 sudo apt-get install -y 
 sudo apt install python3-pip -y
+sudo pip3 install azure-identity
+sudo pip3 install azure-keyvault-secrets
 sudo pip3 install flask 
 sudo pip3 install flask_wtf 
 sudo pip3 install wtforms 

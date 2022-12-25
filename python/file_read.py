@@ -12,7 +12,7 @@ blob_service_client = BlobServiceClient(ini.blobsc,credential)
 
 
 def send_message_queue(timestamp):
-    queue = QueueClient.from_connection_string(conn_str="DefaultEndpointsProtocol=https;AccountName=uploadfilesfrom1;AccountKey=1e7X5xrSXCf5FkBFB8yVG4XA+PFtnmzk0YkXXRN8jrcbri4WsE8G6kxI5l7FAo7G6D2wk+sBde9/+AStNFEScA==;EndpointSuffix=core.windows.net", queue_name="uploadfiles")
+    queue = QueueClient.from_connection_string(conn_str= ini.connectionstringblob, queue_name="uploadfiles")
     queue.send_message(timestamp)
 
         

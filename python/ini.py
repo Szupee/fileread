@@ -19,5 +19,6 @@ account_name = client.get_secret("storageaccount")
 account_key = client.get_secret("accountkey")
 container= client.get_secret("container")
 blobsc = client.get_secret("blobsc")
+connectionstringblob = client.get_secret("connectionstring")
 
 filelocation = ''

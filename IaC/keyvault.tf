@@ -30,6 +30,7 @@ data "azurerm_key_vault_secret" "sqlserver" {
 }
 
 /*
+check
 output "secret_value" {
   value     = data.azurerm_key_vault_secret.testpw.value
   sensitive = true

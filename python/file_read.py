@@ -3,6 +3,7 @@ import ini
 from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient, __version__
 from azure.storage.queue import QueueServiceClient, QueueClient
 connect_str = os.getenv('AZURE_STORAGE_CONNECTION_STRING')
+print()
 credential={
     "account_name": ini.account_name,
     "account_key": ini.account_key

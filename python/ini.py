@@ -10,7 +10,7 @@ client = SecretClient(
 )
 
 
-server = client.get_secret("sqlservername").value + "database.windows.net"
+server = client.get_secret("sqlservername").value + ".database.windows.net"
 database = client.get_secret("database").value
 username = client.get_secret("DBlogin").value
 password = client.get_secret("dbpw").value
@@ -21,4 +21,4 @@ container= client.get_secret("container").value
 blobsc = client.get_secret("blobsc").value
 connectionstringblob = client.get_secret("connectionstring").value
 
-filelocation = ''
+filelocation = '/filereadfiles'

@@ -9,6 +9,8 @@ defaults:
   run:
     shell: bash
   
+env: 
+          ROOT_PATH: '${{github.workspace}}/IaC'
 jobs:
   terraform_plan:
     name: 'terraform plan'

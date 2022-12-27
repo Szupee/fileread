@@ -1,3 +1,4 @@
+
 resource "azurerm_sql_server" "webappsql" {
   name                         = data.azurerm_key_vault_secret.sqlserver.value
   resource_group_name          = azurerm_resource_group.tfr-rg1.name

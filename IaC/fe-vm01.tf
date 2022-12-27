@@ -32,15 +32,11 @@ resource "azurerm_linux_virtual_machine" "tfe-vm01" {
   ]
   disable_password_authentication = "false"
 
-
-
-  connection {
-    type     = "ssh"
-    user     = "adminuser"
-    password = "Password123!"
-    host     = data.azurerm_public_ip.firstpipi.ip_address
-
+  identity{
+    type = "UserAssigned"
+    identity_ids =  ["/subscriptions/f628f459-a59f-4ddd-a635-de6caa1b91ac/resourceGroups/testingLB/providers/Microsoft.ManagedIdentity/userAssignedIdentities/vms"]
   }
+
 
 
   os_disk {
@@ -52,8 +48,8 @@ resource "azurerm_linux_virtual_machine" "tfe-vm01" {
 
   source_image_reference {
     publisher = "Canonical"
-    offer     = "UbuntuServer"
-    sku       = "18.04-LTS"
+    offer     = "0001-com-ubuntu-server-focal"
+    sku       = "20_04-lts-gen2"
     version   = "latest"
   }
 }

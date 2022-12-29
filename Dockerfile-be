@@ -1,0 +1,32 @@
+FROM ubuntu
+
+
+
+RUN apt-get update
+RUN apt-get -y install curl
+RUN apt-get -y install sudo
+RUN apt-get -y install bash
+RUN apt-get -y install gnupg
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install tzdata
+RUN sudo curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+RUN sudo curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list | sudo tee /etc/apt/sources.list.d/mssql-release.list
+RUN apt-get update
+RUN apt-get -y install git
+RUN sudo apt install python3-pip -y
+RUN sudo pip3 install --upgrade pip
+RUN sudo pip3 install azure-storage-blob 
+RUN sudo pip3 install azure-storage-queue
+RUN sudo pip3 install azure-identity
+RUN sudo pip3 install azure-keyvault-secrets
+RUN sudo apt-get install -y python3-pyodbc
+RUN sudo apt install python3-pandas -y
+RUN sudo apt install odbcinst -y
+RUN sudo ACCEPT_EULA=Y apt-get install -y msodbcsql17
+RUN sudo ACCEPT_EULA=Y apt-get install -y mssql-tools
+RUN curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+RUN git clone https://github.com/Szupee/fileread.git
+
+
+
+
+CMD ["python3", "fileread/python/processfile.py"]

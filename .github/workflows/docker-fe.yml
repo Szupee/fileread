@@ -1,4 +1,4 @@
-on: [push]
+on: 
 name: Linux_Container_Workflow
 
 permissions:
@@ -24,11 +24,11 @@ jobs:
           uses: azure/docker-login@v1
           with:
             login-server: szupee.azurecr.io
-            username: 956809a2-cac8-4d8d-a8ca-c074caf27408
-            password: p2Z8Q~5b9-yBdzForAGYI7QeEriBvu7EEzKTwb04
+            username: 
+            password: 
         - run: |
-            docker build . -t szupee.azurecr.io/sampleapp:${{ github.sha }}
-            docker push szupee.azurecr.io/sampleapp:${{ github.sha }}
+            docker build . -t /sampleapp:${{ github.sha }}
+            docker push /sampleapp:${{ github.sha }}
 
         - name: 'Deploy to Azure Container Instances'
           uses: 'azure/aci-deploy@v1'

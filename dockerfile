@@ -17,7 +17,7 @@ RUN sudo pip3 install azure-identity
 RUN sudo pip3 install azure-keyvault-secrets
 RUN git clone https://github.com/Szupee/fileread.git
 RUN curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-RUN az login --service-principal -u 956809a2-cac8-4d8d-a8ca-c074caf27408 -p p2Z8Q~5b9-yBdzForAGYI7QeEriBvu7EEzKTwb04 --tenant 464861ad-ba54-4af4-9caa-3e7502ae62de
+
 
 
 

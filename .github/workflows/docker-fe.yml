@@ -28,7 +28,7 @@ jobs:
             password: p2Z8Q~5b9-yBdzForAGYI7QeEriBvu7EEzKTwb04
         - run: |
             docker build . -t szupee.azurecr.io/sampleapp:${{ github.sha }}
-            docker push szupee.azurecr.io/sampleapp/sampleapp:${{ github.sha }}
+            docker push szupee.azurecr.io/sampleapp:${{ github.sha }}
 
         - name: 'Deploy to Azure Container Instances'
           uses: 'azure/aci-deploy@v1'

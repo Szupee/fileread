@@ -1,0 +1,34 @@
+on: [push]
+name: Linux_Container_Workflow
+
+permissions:
+      id-token: write
+      contents: read
+
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+        steps:
+        # checkout the repo
+        - name: 'Checkout GitHub Action'
+          uses: actions/checkout@main
+          
+        - name: 'Login via Azure CLI'
+          uses: azure/login@v1
+          with:
+              client-id: ${{ secrets.AZURE_CLIENT_ID }}
+              tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+              subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        
+        - name: 'Build and push image'
+          uses: azure/docker-login@v1
+          with:
+            login-server: szupee.azurecr.io
+            username: 956809a2-cac8-4d8d-a8ca-c074caf27408
+            password: p2Z8Q~5b9-yBdzForAGYI7QeEriBvu7EEzKTwb04
+        - run: |
+            docker build . -t szupee.azurecr.io/sampleapp:${{ github.sha }}
+            docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/sampleapp:${{ github.sha }}
+
+        - name: 'Deploy to Azure Container Instances'
+          uses: 'azure/aci-deploy@v1'

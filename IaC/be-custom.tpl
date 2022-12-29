@@ -1,8 +1,9 @@
 #!/bin/bash
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 git clone https://github.com/Szupee/fileread.git
-curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
-curl https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/prod.list > /etc/apt/sources.list.d/mssql-release.list
+sudo curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+sudo curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list | sudo tee /etc/apt/sources.list.d/mssql-release.list
+sudo apt update
 sudo apt install python3-pip -y
 sudo pip3 install --upgrade pip
 sudo pip3 install azure-storage-blob 

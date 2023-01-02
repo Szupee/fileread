@@ -19,6 +19,5 @@ echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
 source ~/.bashrc
 sudo apt-get install -y unixodbc-dev
 cd fileread/python
-sudo python3 createsql.py
 sudo python3 processfile.py
 

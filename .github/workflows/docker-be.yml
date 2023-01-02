@@ -27,5 +27,5 @@ jobs:
             username: ${{ secrets.AZURE_CLIENT_ID }}
             password: ${{ secrets.AZURE_SECRET }}
         - run: |
-            docker build -f Dockerfile-be . -t ${{ secrets.AZURE_ACR }}/sampleapp:${{ github.sha }}
+            docker build -f Dockerfile-be . -t ${{ secrets.AZURE_ACR }}/webapp-be:${{ github.sha }}
             docker push ${{ secrets.AZURE_ACR }}/sampleapp:${{ github.sha }}

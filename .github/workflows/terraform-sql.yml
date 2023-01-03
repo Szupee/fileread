@@ -39,7 +39,7 @@ env:
         working-directory: ${{ env.ROOT_PATH }}
       
     terraform_apply:
-      needs: terraform apply
+      needs: terraform_plan
       name: 'Create MSSQL server with database'
       runs-on: ubuntu-latest
       

@@ -11,7 +11,7 @@ defaults:
   
 env: 
           ROOT_PATH: '${{github.workspace}}/IaC - MSSQL'
-          ROOT_PATH_python:'${{github.workspace}}/python'
+          ROOT_PATH_PYTHON: '${{github.workspace}}/python'
           ARM_CLIENT_ID: ${{secrets.AZURE_CLIENT_ID}}
           ARM_CLIENT_SECRET: ${{secrets.AZURE_SECRET}}
           ARM_SUBSCRIPTION_ID: ${{secrets.AZURE_SUBSCRIPTION_ID}}
@@ -78,5 +78,5 @@ jobs:
         
       - name: run the script
         run: python3 createsql.py
-        working-directory: ${{ env.ROOT_PATH }}
+        working-directory: ${{ env.ROOT_PATH_PYTHON }}
 

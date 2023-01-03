@@ -76,5 +76,5 @@ jobs:
     
     - name: run the script
       run: python3 createsql.py
-      wworking-directory: ${{ env.ROOT_PATH }}/python
+      working-directory: ${{ env.ROOT_PATH }}/python
 

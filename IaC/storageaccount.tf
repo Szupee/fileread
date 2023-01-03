@@ -7,4 +7,5 @@ resource "azurerm_storage_account" "tstorageacc1" {
   account_replication_type = "LRS"
 }
 
+
 */

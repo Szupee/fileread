@@ -44,3 +44,4 @@ jobs:
 
     - name: terra deploy
       run: terraform apply -auto-approve
+      working-directory: ${{ env.ROOT_PATH }}

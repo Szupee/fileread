@@ -29,7 +29,6 @@ jobs:
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
 
-    steps:
     - name: Checkout
       uses: actions/checkout@v3
       

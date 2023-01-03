@@ -39,7 +39,7 @@ jobs:
       working-directory: ${{ env.ROOT_PATH }}
   terraform_apply:
     needs: terraform_plan
-    name:'Create MSSQL server with database'
+    name: 'Create MSSQL server with database'
     runs-on: ubuntu-latest
     
     steps:
@@ -62,7 +62,7 @@ jobs:
   
   create_table:
     needs: terraform_apply
-    name:'Create the table'
+    name: 'Create the table'
     runs-on: ubuntu-latest
     
     steps:

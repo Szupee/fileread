@@ -5,12 +5,6 @@ terraform {
       version = "3.36.0"
     }
   }
-  backend "azurerm" {
-      resource_group_name  = "mainapp"
-      storage_account_name = "uploadfilesfrom1"
-      container_name       = "terraform-sql"
-      key                  = "terraform.tfstate"
-    }
 }
 
 provider "azurerm" {

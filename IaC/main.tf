@@ -8,7 +8,7 @@ terraform {
   backend "azurerm" {
       resource_group_name  = "mainapp"
       storage_account_name = "uploadfilesfrom1"
-      container_name       = "terraform-sql"
+      container_name       = "terraform-iac"
       key                  = "terraform.tfstate"
     }
 }

@@ -1,4 +1,4 @@
-name: 'Terraform'
+name: 'Terraform_sql'
 
 on: [workflow_dispatch]
 permissions:

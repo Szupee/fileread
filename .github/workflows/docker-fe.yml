@@ -29,6 +29,7 @@ jobs:
         - run: |
             docker build -f Dockerfile-fe . -t ${{ secrets.AZURE_ACR }}/webapp-fe:${{ github.sha }}
             docker push ${{ secrets.AZURE_ACR }}/webapp-fe:${{ github.sha }}
+            
         - name: 'Deploy to Azure Container Instances'
           uses: 'azure/aci-deploy@v1'
           with:

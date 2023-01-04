@@ -29,5 +29,16 @@ jobs:
         - run: |
             docker build -f Dockerfile-fe . -t ${{ secrets.AZURE_ACR }}/webapp-fe:${{ github.sha }}
             docker push ${{ secrets.AZURE_ACR }}/webapp-fe:${{ github.sha }}
+        - name: 'Deploy to Azure Container Instances'
+          uses: 'azure/aci-deploy@v1'
+          with:
+            resource-group: ${{ secrets.RESOURCE_GROUP }}
+            dns-name-label: ${{ secrets.RESOURCE_GROUP }}${{ github.run_number }}
+            image: ${{ secrets.REGISTRY_LOGIN_SERVER }}/webapp-fe:${{ github.sha }}
+            registry-login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
+            registry-username: ${{ secrets.AZURE_CLIENT_ID }}
+            registry-password: ${{ secrets.AZURE_SECRET }}
+            name: webapp1
+            location: 'west us' 
 
   
